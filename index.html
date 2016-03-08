@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div id="love"><p>Made with <i class="fa fa-heart"></i> by <a href="http://raghavsood.com">Raghav Sood</a></p></div>
+    <div id="love"><p>Made with <span style="color: #ff0000;"><i class="fa fa-heart"></i></span> by <a href="http://raghavsood.com">Raghav Sood</a></p></div>
 
     <script>
       $.wait = function(ms) {
@@ -29,9 +29,14 @@
       };
 
       $( "#recoverb" ).click(function() {
-        var arr = [ "Contacting NSA", "Finding your Keystore", "Exposing PRISM", "Saving Snowden", "Cracking Keystore Keys", "Cracking failed" ];
+        var arr = [ "Contacting NSA...", 
+                    "Finding your Keystore...", 
+                    "Exposing PRISM...", 
+                    "Saving Snowden...", 
+                    "Cracking Keystore Keys...", 
+                    "<span style=\"color: #ff0000;\">Cracking failed</span>" ];
         $.each(arr, function(i) {
-          setTimeout(function() {console.log("loop" + arr[i]);$("#lolcontent").html( "<h2>"+arr[i]+"..."+"</h2>" );}, 2000*i);
+          setTimeout(function() {console.log("loop" + arr[i]);$("#lolcontent").html( "<h2>"+arr[i]+"</h2>" );}, 2000*i);
         });
         setTimeout(function() {console.log("loopend");$("#lolcontent").html( "<h2>You're fucked.</h2>" );}, 2000*(arr.length));
       });
