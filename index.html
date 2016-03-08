@@ -2,6 +2,7 @@
   <head>
     <title>Recover My Keystore</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"</script>
@@ -13,10 +14,28 @@
   <body>
     <div class="container valign-wrapper" style="height: 100%;">
       <div class="row valign center" style="width: 100%;">
-        <div class="col s12 valign center">
-            <a class="waves-effect waves-light btn valign center">Recover My Keystore</a>
+        <div class="col s12 valign center" id="lolcontent">
+            <a class="waves-effect waves-light btn valign center" id="recoverb">Recover My Keystore</a>
         </div>
       </div>
     </div>
+    <div id="love"><p>Made with <i class="fa fa-heart"></i> by <a href="http://raghavsood.com">Raghav Sood</a></p></div>
+
+    <script>
+      $.wait = function(ms) {
+        var defer = $.Deferred();
+        setTimeout(function() { defer.resolve(); }, ms);
+        return defer;
+      };
+
+      $( "#recoverb" ).click(function() {
+        var arr = [ "Contacting NSA", "Finding your Keystore", "Exposing PRISM", "Saving Snowden", "Cracking Keystore Keys", "Cracking failed" ];
+        $.each(arr, function(i) {
+          setTimeout(function() {console.log("loop" + arr[i]);$("#lolcontent").html( "<h2>"+arr[i]+"..."+"</h2>" );}, 2000*i);
+        });
+        setTimeout(function() {console.log("loopend");$("#lolcontent").html( "<h2>You're fucked.</h2>" );}, 2000*(arr.length));
+      });
+      //<a href=\"\" class=\"waves-effect waves-light btn valign center\">Cry</a>
+    </script>
   </body>
 <html>

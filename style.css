@@ -1,0 +1,17 @@
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+#love {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;
+   text-align: center;
+}
